@@ -1011,10 +1011,116 @@ index
 
 //1. arrow function with map
 
-let values = [1,2,3,4,5];
-let doubledNumbers = values.map(val1 => val1 * 2);
-console.log(values);
-console.log(doubledNumbers);
+// let values = [1,2,3,4,5];
+// let doubledNumbers = values.map(val1 => val1 * 2);//val1 -> own variable
+// console.log(values);
+// console.log(doubledNumbers);
+
+// //2. arrow function with filter
+
+// let fruits = ["banana","apple","orange","watermelon"];
+// let filteredFruits = fruits.filter(newFruits => newFruits.length > 6);
+// console.log(fruits);
+// console.log(filteredFruits);
+
+// //3. arrow function with reduce
+
+// console.log(values);
+// let reducedNumbers = values.reduce((total,values) => total + values, 0);
+// console.log(reducedNumbers);
+
+// //4. arrow function to create a closure
+
+// let newVal = () => {
+//     let count = 0;
+//     return () => {
+//         count ++;
+//         return count;
+//     }
+// }
+// let storedvaribale = newVal();
+// console.log(storedvaribale);
+// console.log(storedvaribale());
+// console.log(storedvaribale());
+// console.log(storedvaribale());
+// console.log(storedvaribale());
+
+
+//Callback Function
+//a function which is called in an another function as parameters is called callback function
+//the function which is receive the callbackfunction is called higherorder function
+
+// function callbackFunction(){
+//     console.log("Iam callback function");
+// }
+// callbackFunction();
+
+// function callbackFunction(){
+//     console.log("Iam callback function");
+// }
+
+// function higherOrderfunction(callbkfun){
+//     callbkfun();
+// }
+// higherOrderfunction(callbackFunction)//callback function
+
+// //settimeout(function,1000)
+
+// setTimeout(function (){
+//     console.log("hello");
+// },1000);
+
+// setInterval(function (){
+//     console.log("hello");
+// },1000);
+
+// let num = [1,2,3,4];
+// num.forEach(function (nums){
+// console.log(nums);
+// })
+
+
+//Block scope function scope
+//note
+
+//referenceerror -> a variable which is called outside of the block
+//we have to user let,const in an block level scope
+
+// if(true){
+//     console.log("hello");
+// }
+
+// if(true){
+//     var vals = "hello"
+//     console.log(vals);
+// }
+// console.log(vals);
+
+//function scope
+//note
+//in function scope we have to use var keyword instead of let and const
+
+function helo(){
+    let values = "hello";
+    console.log(values);
+
+    function helo2(){
+        console.log(values);
+    }
+    helo2();
+}
+helo();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
