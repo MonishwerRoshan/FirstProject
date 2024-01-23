@@ -1100,32 +1100,451 @@ index
 //note
 //in function scope we have to use var keyword instead of let and const
 
-function helo(){
-    let values = "hello";
-    console.log(values);
+// function helo(){
+//     let values = "hello";
+//     console.log(values);
 
-    function helo2(){
-        console.log(values);
-    }
-    helo2();
-}
-helo();
+//     function helo2(){
+//         console.log(values);
+//     }
+//     helo2();
+// }
+// helo();
+
+//ARRAY
+
+// let a = [1,2,3,4,5];
+// console.log(a);
+// console.table(a);
+// console.log(a[1]);
+
+// let b = ["vijay",49,true,{
+//     name:"vijay",
+//     age:49,
+//     City:"chennai",
+//     job:"actor"
+// }]
+// console.log(b);
+// console.table(b);
+
+
+//ARRAY METHODS
+
+/*
+//1.FOREACH - to access every element from the array
+
+//value, index, array
+//index, array - Not Compulsary
+//value - we can change this name as we want
+
+let number = [1,2,3,4,5,6,7,8,9,10];
+// number.forEach((value) => {
+//     console.log(value);
+// })
+
+number.forEach((value,index) => {
+    console.log("Index "+index+" Value "+value);
+})
 
 
 
+let users = [
+    {name:"vijay",age:49},
+    {name:"ajith",age:49},
+    {name:"vikram",age:49},
+    {name:"surya",age:49},
+]
+// users.forEach((value) => {
+//     console.table(value);
+// })
+
+users.forEach((value) => {
+    console.log(value.name);
+})
+*/
+
+//EXPLORING foreach method
+
+// /*Example 1*/
+// let fruits = ["apple","orange","banana","watermelon"];
+// fruits.forEach(fruit => {
+//     console.log(fruit);
+// })
+
+// /*Example 2*/
+// let numbers = [1,4,2,5,6];
+// let total = 0;
+// numbers.forEach(number =>{
+//     total += number;    // total = 0; total = total(0) + number(1), total = 1;
+// })
+// console.log(total);
+
+// /*Example 3*/
+// let double_number = [];
+// numbers.forEach(number => {
+//     double_number.push(number * 2);
+// })
+// console.log(numbers);
+// console.log(double_number);
+
+// /*Example 4*/
+// let max = numbers[0];
+// numbers.forEach(number => {
+//     if(number > max){
+//         max = number;
+//     }
+// })
+// console.log(max);
+
+// /*Example 5*/
+// let arr = [34,56,43,56];
+// let totals = 0;
+// arr.forEach(avg => {    
+//     totals += avg;   
+// })
+// console.log(totals)
+// console.log(totals / arr.length);
 
 
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// var even_numbers = [];
+// arr.forEach(value => {    
+//     if(value % 2 == 0){
+//         even_numbers.push(value);        
+//     }    
+// })
+// console.log(even_numbers);
+
+// let names = ["vijay","ajith","vikram","surya"];
+// names.forEach((names_,index) => {
+//     names[index] = names_.toUpperCase();
+// })
+// console.log(names);
 
 
+//2.MAP FUNCTION - to access every element and we can change anything by using this map function
+/*
+//example - 1
+const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+let sqrt = numbers.map(value => {
+    return Math.sqrt(value).toFixed(2);
+})
+console.log(sqrt);
+console.table(sqrt);
+*/
+
+//I tried this example - 2
+// const names = [
+//     {name:"vijay",age:49,city:"chennai",salary:15000},
+//     {name:"vijay",age:49,city:"chennai",salary:15000},
+//     {name:"vijay",age:49,city:"chennai",salary:15000},
+//     {name:"vijay",age:49,city:"chennai",salary:15000},
+//     {name:"vijay",age:10,city:"chennai",salary:15000}
+// ]
+// let eligible_age = [];
+// let eligible = names.map(value => {
+//     let result = value.age >= 18;
+//     if(result){
+//         eligible_age.push("Eligible");
+//     }    
+//     else{
+//         eligible_age.push("Not Eligible")
+//     }
+// })
+// console.log(eligible_age);
+
+/*Example - 2*/
+/*
+const names = [
+    {name:"vijay",age:49,city:"chennai",salary:15000},
+    {name:"ajith",age:49,city:"chengalpattu",salary:15000},
+    {name:"vikram",age:15,city:"tambaram",salary:15000},
+    {name:"surya",age:49,city:"coimbatore",salary:15000},
+    {name:"jayam ravi",age:10,city:"madurai",salary:15000}
+]
+
+let eligible = names.map(value => ({
+    // name:value.name,
+    // age:value.age,
+    // city:value.city,
+    // salary:value.salary,
+    ...value,
+    status:value.age>=18?"Eligible":"Not Eligible"
+}))
+console.log(eligible);
+console.table(eligible);
+*/
+
+//2.MAP FUNCTION  - it wont affect original array instead it will create new array
+
+//1.Simple Transformation
+// const numbers = [1,2,3,4,5];
+// let new_array = numbers.map(number => {
+//     return number * 2;
+// })
+// console.log(numbers);
+// console.log(new_array);
+
+/*
+originalarray.map(current_value,index,originalarray);
+*/
+
+//Modify array elements
+// let arr = ["hello","world"];
+// let arr_ = arr.map(num => {
+//     return num.toUpperCase();
+// })
+// console.log(arr);
+// console.log(arr_);
+
+//Combining Arrays
+// let fruits = ["apple","orange"];
+// let colors = ["red","orange"];
+
+// let fruitColors = fruits.map((fruit,index) => {
+//     return fruit +"-"+colors[index];
+// })
+// console.log(fruitColors);
+
+//filtering an array
+// let n = [1,2,3,4,5];
+
+// let bool_value = n.map(check => {
+//     return check % 2 == 0;
+// })
+// console.log(bool_value);
+
+//Extraction property from an array
+
+// let names = [
+//     {name:"monish",age:24},
+//     {name:"mona",age:26}
+// ]
+
+// let new_arr = names.map(val => {
+//     return val.name;
+// })
+// console.log(new_arr);
+
+//Modifying an array of objects
+
+// let users = [
+//     {name:"monish",age:24},
+//     {name:"mona",age:26}
+// ]
+
+// let new_arrays = users.map(values => {
+//     return {
+//         name:values.name,
+//         age:values.age + 1
+//     }
+// });
+// console.log(users);
+// console.log(new_arrays);
 
 
+// const fruits = ["apple","banana","watermelon","grapes"];
+// let fruits_modified = fruits.map(function (current_value, index, array){
+//     return {
+//         fruit_name:current_value,
+//         fruit_length:current_value.length,
+//         fruit_position:index,
+//         fruit_array_length:array.length,
+//     };
+// });
+// console.log(fruits_modified);
+// console.table(fruits_modified);
 
 
+//FILTER - main method
+
+// let numbers = [1,2,3,4,5,6,7,8,9,10]
+// let num = numbers.filter(values => {
+//     return values % 2 == 0;
+// });
+// console.log(num);
+
+// let users = [
+//     {name:"alice",age:24},
+//     {name:"bob",age:45}
+// ]
+
+// let modified_datas = users.filter(values => {
+//     return values.age > 30;
+// })
+// console.log(modified_datas);
+
+// let words = ['cat','dog','elephant','fish','giraffe'];
+// let new_words = words.filter(values => {
+//     return values.length >= 4;
+// })
+// console.log(new_words);
+
+// let items = [
+//     {name:"apple",category:"fruit"},
+//     {name:"carrot",category:"vegetable"},
+//     {name:"banana",category:"fruit"}
+// ];
+// let filtered_items = items.filter(values => {
+//     return values.category === "fruit"
+// })
+// console.log(filtered_items);
+
+// let words = ['cat','dog','elephant','fish','giraffe'];
+// let startwithE = words.filter(values => {
+//     return values.startsWith("e");
+// });
+// console.log(startwithE);
+
+// const products = [
+//     {name:"apple",category:"fruit",price:120},
+//     {name:"carrot",category:"vegetable",price:70},
+//     {name:"orange",category:"fruit",price:110},
+//     {name:"mango",category:"fruit",price:90},
+//     {name:"grapes",category:"fruit",price:100},
+// ];
+
+// let updated_products = products.filter(values => {
+//     return values.category === "fruit" && values.price > 100;
+// });
+// console.log(products);
+// console.log(updated_products);
 
 
+// let booksInfo = [
+//     {title:"the magic html",author:"john joe",year:"2013-2015"},
+//     {title:"the magic world of design",author:"joe",year:"2013-2015"},
+//     {title:"the  html",author:"john joe",year:"2013-2015"},
+//     {title:"the wonders",author:"john joe",year:"2013-2015"},
+//     {title:"daily habits",author:"john joe",year:"2013-2015"},
+// ]
+
+// let myterms = booksInfo.filter(values => {
+//     return values.title.includes("html");
+// })
+// console.log(myterms);
+// console.table(myterms);
+
+// let booksInfo = [
+//     {title:"the magic HTML",author:"john joe",year:2013},
+//     {title:"the magic world of design",author:"joe",year:2016},
+//     {title:"the  HTML",author:"john joe",year:2011},
+//     {title:"the wonders",author:"john joe",year:2014},
+//     {title:"daily habits",author:"john joe",year:2010},
+// ]
+
+// let short_terms = "HTML";
+// short_terms = short_terms.toLowerCase();
+// let short_terms_year = 2010;
+
+// let myterms = booksInfo.filter(values => {
+//     return values.title.toLowerCase().includes(short_terms) || values.year === short_terms_year;
+// })
+// console.log(myterms);
+// console.table(myterms);
+
+//REDUCE()
+
+/*
+array.reduce(function(accumulator,currentValue,currentIndex,array){
+
+},inititalValue);
+*/
+
+// let numbers = [1,2,3,4,5];
+// let sum = numbers.reduce((accumulator,currentValue) => {
+//     return accumulator + currentValue;
+// });
+// console.log(sum);
+
+//Flattening an array
+// let nestedArray = [[1,2],[3,4],[5,6]];
+// let flattenedArray = nestedArray.reduce((accumulator,currentValue) => {
+//     return accumulator.concat(currentValue);
+// });
+// console.log(flattenedArray);
+
+// let colors = ['red','green','blue','yellow','orange','red'];
+// let colorsCounts = colors.reduce((accumulator,currentValue) => {
+//         if(currentValue in accumulator){
+//             accumulator[currentValue]++;
+//         }
+//         else{
+//             accumulator[currentValue]=1;
+//         }
+//         return accumulator;
+// },{});
+// console.log(colorsCounts);
+
+// let numbers = [34,32,56,76,87,12];
+// let largestNumber = numbers.reduce((accumulator,currentvalue) => {
+//     return Math.max(accumulator,currentvalue);
+// });
+// console.log(largestNumber);
+
+// let people = [
+//     {name:"rakesh",age:45,city:"chennai"},
+//     {name:"sam",age:45,city:"salem"},
+//     {name:"gopi",age:45,city:"chennai"}
+// ];
+
+// let groupedBycity = people.reduce((accumulator,currentValue) => {
+//     if(currentValue.city in accumulator){
+//         accumulator[currentValue.city].push(currentValue);
+//     }
+//     else{
+//         accumulator[currentValue.city] = [currentValue];
+//     }
+//     return accumulator;
+// },{});
+// console.log(groupedBycity);
+
+//SLICE
+
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+// //slice(start,end)
+// console.log(numbers);
+// console.log("slice :"+numbers.slice());
+// console.log("slice :"+numbers.slice(2));
+// console.log("slice :"+numbers.slice(2,5));
+
+//SPLICE
+
+/*
+splice is to remove elements in array it will change original array
+
+removed_element = splice(start,length,new elements)
+*/
+
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+// console.log("before splice : "+numbers);
+// let removedElements = numbers.splice(2);
+// console.log("removed Elements : "+removedElements);
+// console.log("after splice : "+numbers);
 
 
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+// console.log("before splice : "+numbers);
+// let removedElements = numbers.splice(2,2);
+// console.log("removed Elements : "+removedElements);
+// console.log("after splice : "+numbers);
 
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+// console.log("before splice : "+numbers);
+// let removedElements = numbers.splice(2,2,15,20);
+// console.log("removed Elements : "+removedElements);
+// console.log("after splice : "+numbers);
 
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+// console.log("before splice : "+numbers);
+// let removedElements = numbers.splice(2,2,[15,20]);
+// console.log("removed Elements : "+removedElements);
+// console.log(numbers);
 
-
+// const numbers = [1,2,3,4,5,6,7,8,9,10];
+// console.log("before splice : "+numbers);
+// let removedElements = numbers.splice(2,0,100,200);
+// console.log("removed Elements : "+removedElements);
+// console.log("after splice : "+numbers);
