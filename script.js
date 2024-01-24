@@ -1548,3 +1548,24 @@ removed_element = splice(start,length,new elements)
 // let removedElements = numbers.splice(2,0,100,200);
 // console.log("removed Elements : "+removedElements);
 // console.log("after splice : "+numbers);
+
+//CONCAT
+
+let a = [10,20,30];
+let b = [40,50,60];
+let c = [70,80,90];
+
+let d = a.concat(b);
+console.log(d);
+
+d = a.concat(b,c);
+console.log(d);
+
+d = a.concat(b,c,100,110);
+console.log(d);
+
+d = a.concat(b,c,"hello","worlds");
+console.log(d);
+
+d = a.concat(b,c,["hello","worlds"]);
+console.log(d);
