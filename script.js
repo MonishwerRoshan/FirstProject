@@ -1551,21 +1551,333 @@ removed_element = splice(start,length,new elements)
 
 //CONCAT
 
-let a = [10,20,30];
-let b = [40,50,60];
-let c = [70,80,90];
+// let a = [10,20,30];
+// let b = [40,50,60];
+// let c = [70,80,90];
 
-let d = a.concat(b);
-console.log(d);
+// let d = a.concat(b);
+// console.log(d);
 
-d = a.concat(b,c);
-console.log(d);
+// d = a.concat(b,c);
+// console.log(d);
 
-d = a.concat(b,c,100,110);
-console.log(d);
+// d = a.concat(b,c,100,110);
+// console.log(d);
 
-d = a.concat(b,c,"hello","worlds");
-console.log(d);
+// d = a.concat(b,c,"hello","worlds");
+// console.log(d);
 
-d = a.concat(b,c,["hello","worlds"]);
-console.log(d);
+// d = a.concat(b,c,["hello","worlds"]);
+// console.log(d);
+
+//SORT 
+
+// let names = ['sam','arjun','arya','vijay','surya'];
+// console.log("Before sort : "+names);
+// names.sort();
+// console.log("After sort : "+names);
+
+// let numbers = [43,56,12,34,89,56,123];
+// console.log("Before sort : "+numbers);
+// numbers.sort();
+// console.log("After sort : "+numbers);
+
+// numbers.sort((a,b) => {
+// return a - b;
+// });
+// console.log(numbers);
+
+// numbers.sort((a,b) => {
+//     return b - a;
+//     });
+//     console.log(numbers);
+
+
+
+// const products = [
+//     {name:"apple",category:"fruit",price:120},
+//     {name:"carrot",category:"vegetable",price:70},
+//     {name:"orange",category:"fruit",price:110},
+//     {name:"mango",category:"fruit",price:90},
+//     {name:"grapes",category:"fruit",price:100},
+// ];
+
+// products.sort((a,b) => {
+//     return a.price - b.price;
+// });
+// console.log(products);
+
+
+
+// const products2 = [
+//     {name:"apple",category:"fruit",price:120},
+//     {name:"carrot",category:"vegetable",price:70},
+//     {name:"orange",category:"fruit",price:110},
+//     {name:"mango",category:"fruit",price:90},
+//     {name:"grapes",category:"fruit",price:100},
+// ];
+
+// products2.sort((a,b) => {
+//     if(a.name > b.name) return 1;
+//     if(a.name < b.name) return -1;
+//     else{
+//         return 0;
+//     }
+// });
+// console.log(products2);
+
+
+//FILL(value,start,end) - It will affect the original array
+
+// let val = [1,2,3,4,5];
+// console.log("Before Fill :",val);
+// // val.fill(20);
+// // val.fill(20,1);
+// val.fill(20,3,4);
+// console.log("After Fill :",val);
+
+
+//INCLUDES(value, start_index)
+
+// let products = ['pen','pencil','eraser','box','pen'];
+// let result = products.includes("pen");
+// console.log(result);
+// result = products.includes("scale");
+// console.log(result);
+// result = products.includes("pen",2);
+// console.log(result);
+
+//JOIN(seperator)
+
+// let products = ['pen','pencil','eraser','box','pen'];
+// let result = products.join();//Default , as seperator
+// console.log(result);
+// result = products.join('|');// | as seperator
+// console.log(result);
+
+//REVERSE
+
+// let numbers = [1,2,3,4,5,6];
+// console.log("Before Reverse : "+numbers);
+// numbers.reverse();
+// console.log("After Reverse : "+numbers);
+
+//Array Element With Length Property
+// let n = {0:10,1:20,2:30,3:40,length:4};
+// console.log(n);
+
+// Array.prototype.reverse.call(n);
+// console.log(n);
+
+//PUSH - insert element at the end of the array
+
+// let n = [1,2,3,4,5];
+// console.log(n);
+// console.log(n.push(60));//It returns length of the array
+// console.log(n);
+// console.log(n.push(70,85,90,100));
+// console.log(n);
+
+// let fruits = ["Apple"];
+// console.log(fruits);
+// console.log(fruits.push("orange"));
+// console.log(fruits);
+// console.log(fruits.push("banana","pineapple"));
+// console.log(fruits);
+
+// let user1 = ["vijay","ajith"];
+// let user2 = ["vikram","surya"];
+
+// // user1.push(user2);
+// // console.log(user1);
+
+// user1.push(...user2);//Spread operator
+// console.log(user1);
+
+
+//POP - remove element at the end of the array
+
+// let users = ["ram","ravi","sam","vijay"];
+// console.log(users);
+// console.log(users.pop());//It returns removed elements
+// console.log(users);
+// console.log(users.pop());
+// console.log(users);
+
+
+//SHIFT() - remove elements from the starting index
+
+// let students = ["vijay","ajith","vikram","surya"];
+
+// console.log("before shift :"+students);
+// let removed_elements = students.shift();
+
+// console.log("after shift :"+students);
+// console.log("Removed Element :"+removed_elements);
+
+
+//UNSHIFT() - remove elements from the starting index
+
+// let students = ["vijay","ajith","vikram","surya"];
+
+// console.log("before unshift :"+students);
+// let length = students.unshift("Hello");
+
+// console.log("after unshift :"+students);
+// console.log("length :"+length);
+
+
+//IndexOf()
+
+// let students = ["vijay","ajith","vikram","surya"];
+// let i = students.indexOf("surya");
+// console.log(i);
+
+// let names = "vijay kumar";
+// let result = names.indexOf("a",5);
+// console.log(result);
+
+
+//LastIndexOf()
+// let students = ["vijay","ajith","vikram","surya",'ravi','arjun','surya'];
+
+// let i = students.lastIndexOf("surya");
+// console.log(i);
+
+// let names = 'vijay kumar is a vijay kumar';
+// let result = names.lastIndexOf("vijay");
+// console.log(result);
+
+
+//Every And Some
+
+// let n = [12,34,23,65];
+// let result = n.every(value => {
+//     return value % 2 == 0;
+// });
+// console.log(result);
+
+// let n1 = [12,34,23,65];
+// let result1 = n1.some(value => {
+//     return value % 2 == 0;
+// });
+// console.log(result1);
+
+// function checking(helo){
+// return helo % 2 == 0;
+// };
+
+// let result3 = n.every(checking);
+// console.log(result3);
+
+// let result4 = n.some(checking);
+// console.log(result4);
+
+
+// let users = [
+//     {name:"vijay",age:23},
+//     {name:"vijay",age:27},
+//     {name:"vijay",age:23},
+//     {name:"vijay",age:17}
+// ];
+
+// function eligible(datas){
+//     return datas.age >= 18;
+// };
+
+// let values = users.every(eligible);
+// console.log(values);
+
+// let values2 = users.some(eligible);
+// console.log(values2);
+
+
+//PRIMITIVE AND REFERENCE datatypes
+
+
+// PRIMITIVE
+// let name = "vijay kumar";
+// console.log(typeof name);
+// let age = 25;
+// console.log(typeof age);
+// let isTrue = true;
+// console.log(typeof isTrue);
+// let x;
+// console.log(typeof x);
+// let id = Symbol();
+// console.log(typeof id);
+
+// let a = 10;
+// let b = a;
+// console.log(a);
+// console.log(b);
+// a = 50;
+// console.log(a);
+// console.log(b);
+
+//REFERENCE
+//Object
+// let user = {name:"vijay",age:24};
+// let user2 = user;
+// console.log(user);
+// console.log(user2);
+// user.age = 49;
+// console.log(user);
+// console.log(user2);
+
+// //Array
+// let arr1 = [10,20,30];
+// let arr2 = arr1;
+// console.log(arr1);
+// console.log(arr2);
+// arr1.push(40);
+// console.log(arr1);
+// console.log(arr2);
+
+// //Object clone use spread and object.assign() 
+// let obj1 = {a:1,b:2};
+// let obj2 = {c:3,d:4};
+// // let obj3 = Object.assign({},obj1,obj2);
+// let obj3 = {...obj1,...obj2};
+// console.log(obj3);
+// obj2.c=5;
+// console.log(obj3);
+
+//Multiples ways to clone an array
+
+// let originalArray = [1,2,3,4];
+
+//Spread Operator
+// let clonedArray  = [...originalArray];
+// console.log(clonedArray);
+
+//Slice
+// let clonedArray = originalArray.slice();
+// console.log(clonedArray);
+
+//Concat
+// let clonedArray = [].concat(originalArray);
+// console.log(clonedArray);
+
+//ArrayFrom
+// let clonedArray = Array.from(originalArray);
+// console.log(clonedArray);
+
+//JSON.parse(), JSON.stringify()
+// let clonedArray = JSON.parse(JSON.stringify(originalArray));
+// console.log(clonedArray);
+
+
+//Use of const for creating array
+
+// const a = 10;
+// console.log(a);
+// a=20; -> Assignment to constant variable.
+
+// const users = ['ram','ravi','sam','saran'];
+// console.log(users);
+// users.push("kavin");
+// console.log(users);
+//users = ["hello"]; -> Assignment to constant variable.
+
+
