@@ -1881,3 +1881,125 @@ removed_element = splice(start,length,new elements)
 //users = ["hello"]; -> Assignment to constant variable.
 
 
+/*OBJECTS*/
+
+//creating objects - this -> current object
+//OBJECT LITERAL NOTATION
+const student = {
+    fullName:"vijay",
+    father:"sandhirasekar",
+    age:49,
+    address:"chennai,saaligramam",
+    city:"chennai",
+    about:function(){
+        return `${this.fullName} if from ${this.city}`;
+    },
+    eligibility:function(){
+        return this.age >= 18;
+    },
+};
+console.log(student);
+console.log(student.about());
+console.log(student.eligibility());
+
+//=================================================
+
+//incase we need 1000 objects
+//FACTORY FUNCTION
+
+// function addStudent(fullName,father,age,address,city){
+//     let user = {};
+//     user.fullName = fullName;
+//     user.father = father;
+//     user.age = age;
+//     user.address = address;
+//     user.city = city;
+//     user.about = function(){
+//         return `${this.fullName} if from ${this.city}`;
+//     },
+//     user.eligibility = function(){
+//         return this.age >= 18;
+//     };
+//     return user;
+// };
+// console.log(addStudent("vijay","sandhirasekar",49,"chennai,saaligramam","chennai"));
+
+
+//=================================================
+
+//passing reference of the function
+
+// const studentMethod = {
+//     about:function(){
+//         return `${this.fullName} if from ${this.city}`;
+//     },
+//     eligibility:function(){
+//         return this.age >= 18;
+//     }  
+// };
+
+// function addStudent(fullName,father,age,address,city){
+//     let user = {};
+//     user.fullName = fullName;
+//     user.father = father;
+//     user.age = age;
+//     user.address = address;
+//     user.city = city;
+//     user.about = studentMethod.about;
+//     user.eligibility = studentMethod.eligibility;
+
+//     return user;
+// };
+// console.log(addStudent("vijay","sandhirasekar",49,"chennai,saaligramam","chennai"));
+
+//=================================================
+
+//PROTOTYPE INHERITANCE
+
+
+//we can create multiple methods we dont need to pass the reference to the addstudent
+// const studentMethod = {
+//     about:function(){
+//         return `${this.fullName} if from ${this.city}`;
+//     },
+//     eligibility:function(){
+//         return this.age >= 18;
+//     }  
+// };
+
+// function addStudent(fullName,father,age,address,city){
+//     let user = Object.create(studentMethod);//prototype
+//     user.fullName = fullName;
+//     user.father = father;
+//     user.age = age;
+//     user.address = address;
+//     user.city = city;
+//     return user;
+// };
+// console.log(addStudent("vijay","sandhirasekar",49,"chennai,saaligramam","chennai"));
+
+//prototype example
+
+// let obj1 = {
+//     key1:"value1",
+//     key2:"value2",
+// };
+// console.log(obj1);
+
+// let obj2 = {
+//     key3:"value3",
+// };
+// console.log(obj2);
+
+let obj1 = {
+    key1:"value1",
+    key2:"value2",
+};
+console.log(obj1);
+
+let obj2 = Object.create(obj1);
+obj2.key3 = "value3";
+obj2.key2 = "hey";
+console.log(obj2);
+console.log(obj2.key1);//first it will check the key in this obj2 if it is not there then it will search in the inheritance prototype of obj1.
+console.log(obj2.key2);
